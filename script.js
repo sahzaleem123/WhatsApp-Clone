@@ -5,11 +5,19 @@ axios.get('https://tk-whatsapp.herokuapp.com/messages')
         for (let i = 0; i < response.data.length; i++) {
             let a = response.data[i];
             document.querySelector('ul').innerHTML +=
-                `<h1>${a.name}</h1>
-            <p>${a.number}</p>
-            <p>${a.firstLine}</p>
-            <p>${a.time}</p>
-            <img src="${a.profilePic}" >`
+                `
+                <div class="main">
+                <img class="profile-pics" src="${a.profilePic}" >
+                    <div class="content">
+                        <div>
+                        <h1 class="names">${a.name}</h1>
+                        </div>                        
+                        <p class="numbers">${a.number}</p>
+                        <p class="chats">${a.firstLine}</p>
+                        <p class="times">${a.time}</p>
+                    </div>            
+                </div>
+            `
 
         }
 
